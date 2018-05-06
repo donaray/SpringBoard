@@ -1,0 +1,35 @@
+1) data_exploration.ipnyp is a jupyter notebook that has the summary statistics of the three data sets.
+
+2) Accident.csv:
+ 
+ a) This dataset has 31 columns and 136621 rows.
+ b) Features 'LSOA_of_Accident_Location', 'Location_Northing_OSGR', 'Location_Easting_OSGR', 'Longitude', 'Latitude' have missing values 
+    and have been dropped from the dataset
+ c) Speed_limit has 37 missing values and Time has 2 missing values. Since these features will be impotant for analysis, these 39 rows
+    have been deleted, bringing the total number of rows to 136582.
+ d) The final dataset includes the following columns:
+	1. Accident_Severity
+	2. Day of the week
+	3. Road_type
+	4. Junction_Detail
+	5. Junction_Control
+	6. Pedestrian_Crossing-Human_Control
+	7. Pedestrian_Crossing-Physical_Facilities
+	8. Light_Conditions 
+	9. Weather_Conditions
+	10. Road_Surface_Conditions
+	11. Special_Conditions_at_Site
+	12. Carriageway_Hazards
+	13. Urban_or_Rural_Area
+	
+ 
+3) Vehicle.csv:
+
+ a) The dataset has 22 columns and 25200 rows
+ b) There are no missing values.
+
+
+4) Casualty.csv:
+
+ a) The dataset has 15 columns and 181384 rows.
+ b) There are no missing values.
