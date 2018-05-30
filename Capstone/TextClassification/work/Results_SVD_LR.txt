@@ -1,0 +1,31 @@
+#Results using SVD, Logiistic Regression and CountVectorizer
+#SVD with n_components = 1000
+
+# Initialize the classifier
+#clf = linear_model.LogisticRegression(random_state = 100, class_weight = 'balanced')
+
+# Define Parameter Space
+#parameters = {'C': [0.01,0.1,1,10,100]}
+
+------
+Accuracy score on training data: 0.8717
+Accuracy score on testing data: 0.8529
+
+Roc score: 0.8452
+
+Confusion Matrix
+[[ 851  173]
+ [ 493 3012]]
+
+Classification Report
+             precision    recall  f1-score   support
+
+          0       0.63      0.83      0.72      1024
+          1       0.95      0.86      0.90      3505
+
+avg / total       0.88      0.85      0.86      4529
+
+SVD and Logistic
+-----
+{'C': 0.1}
+

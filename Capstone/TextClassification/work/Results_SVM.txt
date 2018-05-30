@@ -1,0 +1,39 @@
+Results using SGD and CountVectorizer
+------
+Accuracy score on training data: 0.9697
+Accuracy score on testing data: 0.8733
+
+Roc score: 0.8480
+
+Confusion Matrix
+[[ 821  203]
+ [ 371 3134]]
+
+Classification Report
+             precision    recall  f1-score   support
+
+          0       0.69      0.80      0.74      1024
+          1       0.94      0.89      0.92      3505
+
+avg / total       0.88      0.87      0.88      4529
+
+{'clfSGD__alpha': 0.001, 'vect__max_df': 0.5, 'vect__min_df': 0, 'vect__ngram_range': (1, 2)}
+
+Parameters:
+
+# Define a pipeline combining a text feature extractor with a Support Vector Machines
+pipeline = Pipeline([
+    ('vect', CountVectorizer()),
+    ('clfSGD', SGDClassifier(class_weight = 'balanced', loss='hinge', penalty='l2',
+                            alpha=1e-3, random_state=42, max_iter=5, tol=None)),
+])
+
+
+# Define Parameter Space
+parameters = {
+    'vect__max_df': (0.5, 0.75, 1.0),
+    'vect__min_df' : (0, 1, 5, 10, 15, 20, 50),
+    #'vect__max_features': (None, 5000, 10000, 50000),
+    'vect__ngram_range': ((1, 1), (1, 2)),  # unigrams or bigrams
+    'clfSGD__alpha': (1e-2, 1e-3, 1e-4, 1e-5, 1e-6)
+
